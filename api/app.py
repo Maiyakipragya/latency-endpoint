@@ -3,12 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 
-# Load telemetry CSV
-df = pd.read_csv("q-colab-secrets-drive.csv")  # upload this CSV to the repo root
+# Load telemetry CSV (put it in repo root)
+df = pd.read_csv("q-colab-secrets-drive.csv")
 
 app = FastAPI()
 
-# Enable CORS
+# Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
